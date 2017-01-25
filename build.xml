@@ -53,7 +53,7 @@
 	<mkdir dir="${build.dir}" />
 	<mkdir dir="${build.classes}" />
 	<mkdir dir="${release.dir}" />
-
+	<mkdir dir="lib/native" />
 	<mkdir dir="${test.build.dir}" />
 	<mkdir dir="${test.build.classes}" />
 
@@ -217,14 +217,14 @@
 	<copy file="${build.dir}/${final.name}.job" todir="${runtime.deploy}" />
 
 	<!-- local area -->
-	<copy file="${build.dir}/${final.name}.jar" todir="${runtime.local}/lib" />
-	<copy todir="${runtime.local}/lib/native">
+	<copy file="${build.dir}/${final.name}.jar" todir="${runtime.local}/lib" failonerror="false"/>
+	<copy todir="${runtime.local}/lib/native" failonerror="false">
 	 <fileset dir="lib/native" />
 	</copy>
 	<copy todir="${runtime.local}/conf">
 	 <fileset dir="${conf.dir}" excludes="*.template" />
 	</copy>
-	<copy todir="${runtime.local}/lib">
+	<copy todir="${runtime.local}/lib" failonerror="false">
 	 <fileset dir="${build.dir}/lib"
 		excludes="ant*.jar,jasper*.jar,jsp-*.jar,hadoop*test*.jar,hbase*test*.jar" />
 	</copy>
