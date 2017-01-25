@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<ivy-module version="1.0">
+  <info organisation="tw.com.ruten.ts" module="simple">
+    <license name="Apache 2.0"
+      url="http://www.apache.org/licenses/LICENSE-2.0.txt/" />
+    <description>
+    	MR Simple code for Hadoop-2.7.3
+    </description>
+  </info>
+
+  <configurations>
+    <include file="${basedir}/ivy/ivy-configurations.xml" />
+  </configurations>
+
+  <publications>
+    <!--get the artifact from our module name -->
+    <artifact conf="master" />
+  </publications>
+
+  <dependencies>
+    <!-- Hadoop Dependencies -->
+    <dependency org="org.apache.hadoop" name="hadoop-common" rev="2.7.3" conf="*->default">
+      <exclude org="hsqldb" name="hsqldb" />
+      <exclude org="net.sf.kosmosfs" name="kfs" />
+      <exclude org="net.java.dev.jets3t" name="jets3t" /> 
+      <exclude org="org.eclipse.jdt" name="core" />
+      <exclude org="org.mortbay.jetty" name="jsp-*" />
+      <exclude org="ant" name="ant" />
+    </dependency>
+    
+    <dependency org="org.apache.hadoop" name="hadoop-hdfs" rev="2.7.3" conf="*->default"/>
+    <dependency org="org.apache.hadoop" name="hadoop-mapreduce-client-core" rev="2.7.3" conf="*->default"/>
+    <dependency org="org.apache.hadoop" name="hadoop-mapreduce-client-jobclient" rev="2.7.3" conf="*->default"/>
+    <!-- End of Hadoop Dependencies -->
+  </dependencies>
+
+</ivy-module>

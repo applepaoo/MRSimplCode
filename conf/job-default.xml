@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+
+<property>
+	<name>simple.mr.property</name>
+	<value>hello conf</value>
+	<description>
+		[String] the value type : Boolean, Int, Float, Double, String ....
+		this property be loaded in the TSConfig create and use in MR task.
+	</description>
+</property>
+
+</configuration>
