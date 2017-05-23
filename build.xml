@@ -435,5 +435,17 @@
 	<delete includeemptydirs="true" dir="${runtime.dir}" />
  </target>
 
-
+ <target name="git-version" depends="init" description="--> get the git version">
+ 	<exec executable="git" failonerror="true" resultproperty="get.exit.code" output="build/classes/.version">
+        <arg value="log" />
+        <arg value="--pretty=format:'%H'" />
+        <arg value="-1" />
+	</exec>
+ 	<echo message="Git Status: ${get.exit.code}" />
+ 	<loadfile srcFile=".version" property="core.version" />
+ 	<echo message="Core Version: ${core.version}" />
+ </target>
+	
+	
+	
 </project>

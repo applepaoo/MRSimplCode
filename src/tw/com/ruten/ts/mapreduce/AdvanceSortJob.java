@@ -26,6 +26,7 @@ import org.apache.log4j.Logger;
 
 import tw.com.ruten.ts.mapreduce.AdvanceSortJob.SortedKey.GroupComparator;
 import tw.com.ruten.ts.mapreduce.AdvanceSortJob.SortedKey.SortComparator;
+import tw.com.ruten.ts.utils.JobUtils;
 import tw.com.ruten.ts.utils.TsConf;
 
 
@@ -176,7 +177,7 @@ public class AdvanceSortJob extends Configured implements Tool{
 
 		LOG.info(conf.get("simple.mr.property"));
 		
-		Job job = Job.getInstance(conf, "word count");
+		Job job = Job.getInstance(conf, "AdvanceSortJob");
 
 		job.setJarByClass(AdvanceSortJob.class);
 		job.setInputFormatClass(TextInputFormat.class);
@@ -198,7 +199,7 @@ public class AdvanceSortJob extends Configured implements Tool{
 		FileInputFormat.addInputPath(job, new Path(args[0]));
 		FileOutputFormat.setOutputPath(job, new Path(args[1], String.valueOf(System.currentTimeMillis())));
 
-		return job.waitForCompletion(true) ? 0 : -1;
+		return JobUtils.sumbitJob(job, true, args[0]) ? 0 : -1;
 	}
 	
 	public static void main(String[] args) throws Exception {

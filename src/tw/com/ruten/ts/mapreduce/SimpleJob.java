@@ -10,6 +10,7 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.input.FileSplit;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
@@ -17,6 +18,7 @@ import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 import org.apache.log4j.Logger;
 
+import tw.com.ruten.ts.utils.JobUtils;
 import tw.com.ruten.ts.utils.TsConf;
 
 
@@ -31,7 +33,7 @@ public class SimpleJob extends Configured implements Tool{
 	public static Logger LOG = Logger.getLogger(SimpleJob.class);
 	public Configuration conf;
 	
-	public static class TokenizerMapper  extends Mapper<Object, Text, Text, IntWritable> {
+	public static class TokenizerMapper  extends Mapper<Object, Text, Text, Text> {
 
 		private final static IntWritable one = new IntWritable(1);
 		private Text word = new Text();
@@ -48,25 +50,28 @@ public class SimpleJob extends Configured implements Tool{
 			
 			LOG.info("line: " + line);
 			
+			/// get the mapper file source
+			Path filePath = ((FileSplit) context.getInputSplit()).getPath();
+			LOG.info(filePath.toString());
+			
 			for(int i=0; i<line.length(); i++) {
 				String sub = line.substring(i, i+1);
 				word.set(sub);
-				context.write(word, one);
+				context.write(word, new Text());
 			}
 		}
 	}
 
-	public static class IntSumReducer extends Reducer<Text,IntWritable,Text,IntWritable> {
-		private IntWritable result = new IntWritable();
+	public static class IntSumReducer extends Reducer<Text,Text,Text,Text> {
+		private Text result = new Text();
 
-		public void reduce(Text key, Iterable<IntWritable> values,
+		public void reduce(Text key, Iterable<Text> values,
 		                   Context context
 		                  ) throws IOException, InterruptedException {
 			int sum = 0;
-			for (IntWritable val : values) {
-				sum += val.get();
+			for (Text val : values) {
+				val.toString();
 			}
-			result.set(sum);
 			context.write(key, result);
 		}
 	}
@@ -81,9 +86,8 @@ public class SimpleJob extends Configured implements Tool{
 		}
 
 		LOG.info(conf.get("simple.mr.property"));
+		Job job = Job.getInstance(conf, "SimpleJob");
 		
-		Job job = Job.getInstance(conf, "word count");
-
 		job.setJarByClass(SimpleJob.class);
 		job.setInputFormatClass(TextInputFormat.class);
 		job.setMapperClass(TokenizerMapper.class);
@@ -95,8 +99,9 @@ public class SimpleJob extends Configured implements Tool{
 
 		FileInputFormat.addInputPath(job, new Path(args[0]));
 		FileOutputFormat.setOutputPath(job, new Path(args[1], String.valueOf(System.currentTimeMillis())));
-
-		return job.waitForCompletion(true) ? 0 : -1;
+		
+		/// lock file 
+		return JobUtils.sumbitJob(job, true, args[0]) ? 0 : -1;
 	}
 	
 	public static void main(String[] args) throws Exception {
