@@ -13,11 +13,9 @@ public class JobUtils {
 	public static boolean sumbitJob(org.apache.hadoop.mapreduce.Job job, 
 			boolean verbose) throws IOException {
 		
-		JobID jobid = job.getJobID();
-		
 		try{
 			job.submit();
-			jobid = job.getJobID();
+			JobID jobid = job.getJobID();
 			
 			LOG.info("submit job, jobid=" + jobid.toString() );
 			
@@ -45,15 +43,16 @@ public class JobUtils {
 			Path... lockPath) throws IOException {
 		
 		FileSystem fs = FileSystem.get(job.getConfiguration());
-		JobID jobid = job.getJobID();
+		String applicationID = null;
 		
 		try{
 			job.submit();
-			jobid = job.getJobID();
+			JobID jobid = job.getJobID();
+			applicationID = jobid.appendTo(new StringBuilder("application")).toString();
 			
 			LOG.info("submit job, jobid=" + jobid.toString() );
 			for(Path path: lockPath){
-				createLockFile(fs, new Path(path, jobid.toString() + ".lock.file"), true);
+				createLockFile(fs, new Path(path, applicationID + ".lock.file"), true);
 			}
 			
 			if (verbose) {
@@ -69,9 +68,9 @@ public class JobUtils {
 		}catch (Exception e){
 			
 		}finally{
-			if(jobid != null){
+			if(applicationID != null){
 				for(Path path: lockPath){
-					removeLockFile(fs, new Path(path, jobid.toString() + ".lock.file"));
+					removeLockFile(fs, new Path(path, applicationID + ".lock.file"));
 				}
 			}
 		}
@@ -84,15 +83,16 @@ public class JobUtils {
 			String... lockPath) throws IOException {
 		
 		FileSystem fs = FileSystem.get(job.getConfiguration());
-		JobID jobid = job.getJobID();
+		String applicationID = null;
 		
 		try{
 			job.submit();
-			jobid = job.getJobID();
+			JobID jobid = job.getJobID();
+			applicationID = jobid.appendTo(new StringBuilder("application")).toString();
 			
 			LOG.info("submit job, jobid=" + jobid.toString() );
 			for(String path: lockPath){
-				createLockFile(fs, new Path(path, jobid.toString() + ".lock.file"), true);
+				createLockFile(fs, new Path(path, applicationID + ".lock.file"), true);
 			}
 			
 			if (verbose) {
@@ -108,9 +108,9 @@ public class JobUtils {
 		}catch (Exception e){
 			
 		}finally{
-			if(jobid != null){
+			if(applicationID != null){
 				for(String path: lockPath){
-					removeLockFile(fs, new Path(path, jobid.toString() + ".lock.file"));
+					removeLockFile(fs, new Path(path, applicationID + ".lock.file"));
 				}
 			}
 		}
