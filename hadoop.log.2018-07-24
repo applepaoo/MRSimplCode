@@ -1,0 +1,203 @@
+2018-07-24 11:53:17,369 INFO  mapreduce.SimpleJob - hello conf
+2018-07-24 11:58:25,215 INFO  mapreduce.SimpleJob - hello conf
+2018-07-24 11:59:16,787 INFO  mapreduce.SimpleJob - hello conf
+2018-07-24 11:59:16,911 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-07-24 11:59:17,276 WARN  mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2018-07-24 11:59:41,069 INFO  mapreduce.SimpleJob - hello conf
+2018-07-24 11:59:41,196 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-07-24 11:59:41,570 WARN  mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2018-07-24 12:04:00,953 INFO  mapreduce.SimpleJob - hello conf
+2018-07-24 12:04:01,086 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-07-24 12:04:01,517 WARN  mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2018-07-24 12:05:39,730 INFO  mapreduce.SimpleJob - hello conf
+2018-07-24 12:05:39,861 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-07-24 12:05:40,258 WARN  mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2018-07-24 12:08:01,797 INFO  mapreduce.SimpleJob - hello conf
+2018-07-24 12:08:01,920 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-07-24 12:08:02,291 WARN  mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2018-07-24 12:10:55,029 INFO  mapreduce.SimpleJob - hello conf
+2018-07-24 12:10:55,171 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-07-24 12:10:55,562 WARN  mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2018-07-24 12:10:55,738 INFO  utils.JobUtils - submit job, jobid=job_local761875277_0001
+2018-07-24 12:10:55,842 INFO  mapreduce.SimpleJob - line: 11 22 33 44 11 22 33 11 22 11
+2018-07-24 12:10:55,842 INFO  mapreduce.SimpleJob - file:/D:/workspace2/MRSimpleCode/tmp/input/test.txt.txt
+2018-07-24 12:10:55,853 WARN  mapred.LocalJobRunner - job_local761875277_0001
+java.lang.Exception: java.io.IOException: Type mismatch in value from map: expected org.apache.hadoop.io.IntWritable, received org.apache.hadoop.io.Text
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.runTasks(LocalJobRunner.java:462)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.run(LocalJobRunner.java:522)
+Caused by: java.io.IOException: Type mismatch in value from map: expected org.apache.hadoop.io.IntWritable, received org.apache.hadoop.io.Text
+	at org.apache.hadoop.mapred.MapTask$MapOutputBuffer.collect(MapTask.java:1079)
+	at org.apache.hadoop.mapred.MapTask$NewOutputCollector.write(MapTask.java:715)
+	at org.apache.hadoop.mapreduce.task.TaskInputOutputContextImpl.write(TaskInputOutputContextImpl.java:89)
+	at org.apache.hadoop.mapreduce.lib.map.WrappedMapper$Context.write(WrappedMapper.java:112)
+	at tw.com.ruten.ts.mapreduce.SimpleJob$TokenizerMapper.map(SimpleJob.java:60)
+	at tw.com.ruten.ts.mapreduce.SimpleJob$TokenizerMapper.map(SimpleJob.java:1)
+	at org.apache.hadoop.mapreduce.Mapper.run(Mapper.java:146)
+	at org.apache.hadoop.mapred.MapTask.runNewMapper(MapTask.java:787)
+	at org.apache.hadoop.mapred.MapTask.run(MapTask.java:341)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job$MapTaskRunnable.run(LocalJobRunner.java:243)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-07-24 12:22:19,712 INFO  mapreduce.SimpleJob - hello conf
+2018-07-24 12:22:19,860 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-07-24 12:22:20,260 WARN  mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2018-07-24 12:22:20,466 INFO  utils.JobUtils - submit job, jobid=job_local853562245_0001
+2018-07-24 12:22:20,577 INFO  mapreduce.SimpleJob - line: 11 22 33 44 11 22 33 11 22 11
+2018-07-24 12:22:20,577 INFO  mapreduce.SimpleJob - file:/D:/workspace2/MRSimpleCode/tmp/input/test.txt.txt
+2018-07-24 12:22:20,588 WARN  mapred.LocalJobRunner - job_local853562245_0001
+java.lang.Exception: java.io.IOException: Type mismatch in value from map: expected org.apache.hadoop.io.IntWritable, received org.apache.hadoop.io.Text
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.runTasks(LocalJobRunner.java:462)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.run(LocalJobRunner.java:522)
+Caused by: java.io.IOException: Type mismatch in value from map: expected org.apache.hadoop.io.IntWritable, received org.apache.hadoop.io.Text
+	at org.apache.hadoop.mapred.MapTask$MapOutputBuffer.collect(MapTask.java:1079)
+	at org.apache.hadoop.mapred.MapTask$NewOutputCollector.write(MapTask.java:715)
+	at org.apache.hadoop.mapreduce.task.TaskInputOutputContextImpl.write(TaskInputOutputContextImpl.java:89)
+	at org.apache.hadoop.mapreduce.lib.map.WrappedMapper$Context.write(WrappedMapper.java:112)
+	at tw.com.ruten.ts.mapreduce.SimpleJob$TokenizerMapper.map(SimpleJob.java:60)
+	at tw.com.ruten.ts.mapreduce.SimpleJob$TokenizerMapper.map(SimpleJob.java:1)
+	at org.apache.hadoop.mapreduce.Mapper.run(Mapper.java:146)
+	at org.apache.hadoop.mapred.MapTask.runNewMapper(MapTask.java:787)
+	at org.apache.hadoop.mapred.MapTask.run(MapTask.java:341)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job$MapTaskRunnable.run(LocalJobRunner.java:243)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-07-24 12:22:53,709 INFO  mapreduce.SimpleJob - hello conf
+2018-07-24 12:22:53,864 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-07-24 12:22:54,278 WARN  mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2018-07-24 12:22:54,476 INFO  utils.JobUtils - submit job, jobid=job_local1732724630_0001
+2018-07-24 12:22:54,602 INFO  mapreduce.SimpleJob - line: 11 22 33 44 11 22 33 11 22 11
+2018-07-24 12:22:54,602 INFO  mapreduce.SimpleJob - file:/D:/workspace2/MRSimpleCode/tmp/input/test.txt.txt
+2018-07-24 12:22:54,614 WARN  mapred.LocalJobRunner - job_local1732724630_0001
+java.lang.Exception: java.io.IOException: Type mismatch in value from map: expected org.apache.hadoop.io.IntWritable, received org.apache.hadoop.io.Text
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.runTasks(LocalJobRunner.java:462)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.run(LocalJobRunner.java:522)
+Caused by: java.io.IOException: Type mismatch in value from map: expected org.apache.hadoop.io.IntWritable, received org.apache.hadoop.io.Text
+	at org.apache.hadoop.mapred.MapTask$MapOutputBuffer.collect(MapTask.java:1079)
+	at org.apache.hadoop.mapred.MapTask$NewOutputCollector.write(MapTask.java:715)
+	at org.apache.hadoop.mapreduce.task.TaskInputOutputContextImpl.write(TaskInputOutputContextImpl.java:89)
+	at org.apache.hadoop.mapreduce.lib.map.WrappedMapper$Context.write(WrappedMapper.java:112)
+	at tw.com.ruten.ts.mapreduce.SimpleJob$TokenizerMapper.map(SimpleJob.java:60)
+	at tw.com.ruten.ts.mapreduce.SimpleJob$TokenizerMapper.map(SimpleJob.java:1)
+	at org.apache.hadoop.mapreduce.Mapper.run(Mapper.java:146)
+	at org.apache.hadoop.mapred.MapTask.runNewMapper(MapTask.java:787)
+	at org.apache.hadoop.mapred.MapTask.run(MapTask.java:341)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job$MapTaskRunnable.run(LocalJobRunner.java:243)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-07-24 12:23:56,516 INFO  mapreduce.SimpleJob - hello conf
+2018-07-24 12:23:56,661 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-07-24 12:23:57,048 WARN  mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2018-07-24 12:23:57,239 INFO  utils.JobUtils - submit job, jobid=job_local763361180_0001
+2018-07-24 12:23:57,349 INFO  mapreduce.SimpleJob - line: 11 22 33 44 11 22 33 11 22 11
+2018-07-24 12:23:57,349 INFO  mapreduce.SimpleJob - file:/D:/workspace2/MRSimpleCode/tmp/input/test.txt.txt
+2018-07-24 14:11:56,903 INFO  mapreduce.SimpleJob - hello conf
+2018-07-24 14:11:57,042 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-07-24 14:11:57,423 WARN  mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2018-07-24 14:11:57,637 INFO  utils.JobUtils - submit job, jobid=job_local716387493_0001
+2018-07-24 14:11:57,747 INFO  mapreduce.SimpleJob - line: 11 22 33 44 11 22 33 11 22 11
+2018-07-24 14:11:57,747 INFO  mapreduce.SimpleJob - file:/D:/workspace2/MRSimpleCode/tmp/input/test.txt.txt
+2018-07-24 14:21:55,537 INFO  mapreduce.SimpleJob - hello conf
+2018-07-24 14:21:55,682 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-07-24 14:21:56,062 WARN  mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2018-07-24 14:21:56,252 INFO  utils.JobUtils - submit job, jobid=job_local1310550681_0001
+2018-07-24 14:21:56,359 INFO  mapreduce.SimpleJob - line: 11 22 33 44 11 22 33 11 22 11
+2018-07-24 14:21:56,359 INFO  mapreduce.SimpleJob - file:/D:/workspace2/MRSimpleCode/tmp/input/test.txt.txt
+2018-07-24 14:28:33,538 INFO  mapreduce.SimpleJob - hello conf
+2018-07-24 14:28:33,683 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-07-24 14:28:34,080 WARN  mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2018-07-24 14:28:34,270 INFO  utils.JobUtils - submit job, jobid=job_local467459238_0001
+2018-07-24 14:28:34,391 INFO  mapreduce.SimpleJob - line: 11 22 33 44 11 22 33 11 22 11
+2018-07-24 14:28:34,391 INFO  mapreduce.SimpleJob - file:/D:/workspace2/MRSimpleCode/tmp/input/test.txt.txt
+2018-07-24 14:29:21,146 INFO  mapreduce.SimpleJob - hello conf
+2018-07-24 14:29:21,294 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-07-24 14:29:21,685 WARN  mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2018-07-24 14:29:21,896 INFO  utils.JobUtils - submit job, jobid=job_local325576187_0001
+2018-07-24 14:29:22,009 INFO  mapreduce.SimpleJob - line: 11 22 33 44 11 22 33 11 22 11
+2018-07-24 14:29:22,009 INFO  mapreduce.SimpleJob - file:/D:/workspace2/MRSimpleCode/tmp/input/test.txt.txt
+2018-07-24 15:36:20,543 INFO  mapreduce.SimpleJob - hello conf
+2018-07-24 15:36:20,695 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-07-24 15:36:21,096 WARN  mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2018-07-24 15:36:21,286 INFO  utils.JobUtils - submit job, jobid=job_local2005811312_0001
+2018-07-24 15:36:21,414 INFO  mapreduce.SimpleJob - line: 123 456 789 987
+2018-07-24 15:36:21,414 INFO  mapreduce.SimpleJob - file:/D:/workspace2/MRSimpleCode/tmp/input/test.txt.txt
+2018-07-24 15:36:42,115 INFO  mapreduce.SimpleJob - hello conf
+2018-07-24 15:36:42,260 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-07-24 15:36:42,660 WARN  mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2018-07-24 15:36:42,843 INFO  utils.JobUtils - submit job, jobid=job_local336702826_0001
+2018-07-24 15:36:42,962 INFO  mapreduce.SimpleJob - line: 123 456 789 987
+2018-07-24 15:36:42,963 INFO  mapreduce.SimpleJob - file:/D:/workspace2/MRSimpleCode/tmp/input/test.txt
+2018-07-24 15:50:40,961 INFO  mapreduce.SimpleJob - hello conf
+2018-07-24 15:50:41,106 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-07-24 15:50:41,486 WARN  mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2018-07-24 15:50:41,670 INFO  utils.JobUtils - submit job, jobid=job_local548001359_0001
+2018-07-24 15:50:41,792 INFO  mapreduce.SimpleJob - line: 123 456 789 987
+2018-07-24 15:50:41,792 INFO  mapreduce.SimpleJob - file:/D:/workspace2/MRSimpleCode/tmp/input/test.txt
+2018-07-24 15:51:22,393 INFO  mapreduce.SimpleJob - hello conf
+2018-07-24 15:51:22,537 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-07-24 15:51:22,926 WARN  mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2018-07-24 15:51:23,112 INFO  utils.JobUtils - submit job, jobid=job_local442617944_0001
+2018-07-24 15:51:23,229 INFO  mapreduce.SimpleJob - line: 123 456 789 987
+2018-07-24 15:51:23,229 INFO  mapreduce.SimpleJob - file:/D:/workspace2/MRSimpleCode/tmp/input/test.txt
+2018-07-24 15:59:00,968 INFO  mapreduce.SimpleJob - hello conf
+2018-07-24 15:59:01,110 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-07-24 15:59:01,506 WARN  mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2018-07-24 15:59:01,701 INFO  utils.JobUtils - submit job, jobid=job_local2089345021_0001
+2018-07-24 15:59:01,823 WARN  mapred.LocalJobRunner - job_local2089345021_0001
+java.lang.Exception: java.lang.Error: Unresolved compilation problem: 
+	The method write(Text, Text) in the type TaskInputOutputContext<Object,Text,Text,Text> is not applicable for the arguments (Text, IntWritable)
+
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.runTasks(LocalJobRunner.java:462)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.run(LocalJobRunner.java:522)
+Caused by: java.lang.Error: Unresolved compilation problem: 
+	The method write(Text, Text) in the type TaskInputOutputContext<Object,Text,Text,Text> is not applicable for the arguments (Text, IntWritable)
+
+	at tw.com.ruten.ts.mapreduce.SimpleJob$TokenizerMapper.map(SimpleJob.java:60)
+	at tw.com.ruten.ts.mapreduce.SimpleJob$TokenizerMapper.map(SimpleJob.java:1)
+	at org.apache.hadoop.mapreduce.Mapper.run(Mapper.java:146)
+	at org.apache.hadoop.mapred.MapTask.runNewMapper(MapTask.java:787)
+	at org.apache.hadoop.mapred.MapTask.run(MapTask.java:341)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job$MapTaskRunnable.run(LocalJobRunner.java:243)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-07-24 15:59:15,476 INFO  mapreduce.SimpleJob - hello conf
+2018-07-24 15:59:15,624 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-07-24 15:59:16,039 WARN  mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2018-07-24 15:59:16,215 INFO  utils.JobUtils - submit job, jobid=job_local209096191_0001
+2018-07-24 15:59:16,337 INFO  mapreduce.SimpleJob - line: 123 456 789 987
+2018-07-24 15:59:16,337 INFO  mapreduce.SimpleJob - file:/D:/workspace2/MRSimpleCode/tmp/input/test.txt
+2018-07-24 16:03:00,259 INFO  mapreduce.SimpleJob - hello conf
+2018-07-24 16:03:00,405 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-07-24 16:03:00,801 WARN  mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2018-07-24 16:03:00,990 INFO  utils.JobUtils - submit job, jobid=job_local1846156352_0001
+2018-07-24 16:03:01,110 INFO  mapreduce.SimpleJob - line: 123456789987
+2018-07-24 16:03:01,110 INFO  mapreduce.SimpleJob - file:/D:/workspace2/MRSimpleCode/tmp/input/test.txt
+2018-07-24 16:16:59,944 INFO  mapreduce.SimpleJob - hello conf
+2018-07-24 16:17:00,089 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-07-24 16:17:00,480 WARN  mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2018-07-24 16:17:00,656 INFO  utils.JobUtils - submit job, jobid=job_local221893830_0001
+2018-07-24 16:17:00,782 INFO  mapreduce.SimpleJob - line: 123456789987
+2018-07-24 16:17:00,782 INFO  mapreduce.SimpleJob - file:/D:/workspace2/MRSimpleCode/tmp/input/test.txt
+2018-07-24 16:21:29,188 INFO  mapreduce.SimpleJob - hello conf
+2018-07-24 16:21:29,333 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-07-24 16:21:29,733 WARN  mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2018-07-24 16:21:29,921 INFO  utils.JobUtils - submit job, jobid=job_local1585041483_0001
+2018-07-24 16:21:30,033 INFO  mapreduce.SimpleJob - line: 123456789987
+2018-07-24 16:21:30,033 INFO  mapreduce.SimpleJob - file:/D:/workspace2/MRSimpleCode/tmp/input/test.txt
+2018-07-24 16:50:56,876 INFO  mapreduce.SimpleJob - hello conf
+2018-07-24 16:50:57,017 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-07-24 16:50:57,408 WARN  mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2018-07-24 16:50:57,601 INFO  utils.JobUtils - submit job, jobid=job_local830696716_0001
+2018-07-24 16:50:57,711 INFO  mapreduce.SimpleJob - line: 123456789987
+2018-07-24 16:50:57,711 INFO  mapreduce.SimpleJob - file:/D:/workspace2/MRSimpleCode/tmp/input/test.txt

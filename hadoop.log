@@ -1,0 +1,12 @@
+2018-07-25 09:40:48,809 INFO  mapreduce.SimpleJob - hello conf
+2018-07-25 09:40:48,965 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-07-25 09:40:49,364 WARN  mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2018-07-25 09:40:49,563 INFO  utils.JobUtils - submit job, jobid=job_local1799622135_0001
+2018-07-25 09:40:49,686 INFO  mapreduce.SimpleJob - line: 123456789987
+2018-07-25 09:40:49,687 INFO  mapreduce.SimpleJob - file:/D:/workspace2/MRSimpleCode/tmp/input/test.txt
+2018-07-25 09:58:11,707 INFO  mapreduce.SimpleJob - hello conf
+2018-07-25 09:58:11,854 WARN  util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-07-25 09:58:12,233 WARN  mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2018-07-25 09:58:12,415 INFO  utils.JobUtils - submit job, jobid=job_local266202387_0001
+2018-07-25 09:58:12,530 INFO  mapreduce.SimpleJob - line: 123456789987
+2018-07-25 09:58:12,530 INFO  mapreduce.SimpleJob - file:/D:/workspace2/MRSimpleCode/tmp/input/test.txt
