@@ -27,7 +27,7 @@
           http://www.ibiblio.net/pub/packages/maven2
           http://central.maven.org/maven2
   -->
-  <property name="oss.sonatype.org" 
+  <property name="oss.sonatype.org"  
     value="http://oss.sonatype.org/content/repositories/releases/" 
     override="false"/>
   <property name="repo.maven.org"
@@ -47,6 +47,16 @@
   <settings defaultResolver="default"/>
   
   <resolvers>
+      <ibiblio name="ruten.maven"
+      root="http://172.25.8.57:31000/artifactory/maven-release-local/"
+      pattern="${maven2.pattern.ext}"
+      m2compatible="true"/>
+
+    <ibiblio name="jcenter"
+      root="http://172.25.8.57:31000/artifactory/jcenter/"
+      pattern="${maven2.pattern.ext}"
+      m2compatible="true"/>
+  
     <ibiblio name="maven2"
       root="${repo.maven.org}"
       pattern="${maven2.pattern.ext}"
@@ -71,6 +81,8 @@
      
     <chain name="default" dual="true">
       <resolver ref="local"/>
+      <resolver ref="ruten.maven" />
+      <resolver ref="jcenter" />
       <resolver ref="maven2"/>
       <resolver ref="sonatype"/>
       <resolver ref="apache-snapshot"/>

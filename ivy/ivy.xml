@@ -28,9 +28,18 @@
       <exclude org="ant" name="ant" />
     </dependency>
     
+    <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+	<dependency org="com.googlecode.json-simple" name="json-simple" rev="1.1.1" conf="*->default"/>
+    
+    <dependency org="org.apache.hadoop" name="hadoop-auth" rev="2.7.3" conf="*->default"/>
     <dependency org="org.apache.hadoop" name="hadoop-hdfs" rev="2.7.3" conf="*->default"/>
     <dependency org="org.apache.hadoop" name="hadoop-mapreduce-client-core" rev="2.7.3" conf="*->default"/>
     <dependency org="org.apache.hadoop" name="hadoop-mapreduce-client-jobclient" rev="2.7.3" conf="*->default"/>
+    
+<!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-yarn-common -->
+<dependency org="org.apache.hadoop" name="hadoop-yarn-common" rev="2.7.3" conf="*->default"/>
+    
+
     <!-- End of Hadoop Dependencies -->
   </dependencies>
 
